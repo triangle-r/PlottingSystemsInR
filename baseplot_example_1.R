@@ -28,7 +28,7 @@ par(mfrow = c(1,2))                    # Put 2 plots on the same device
 plot(hp,mpg)                        
 # Parameters with explanation:
 plot(hp,mpg,
-     main = "MPG vs. Displacement",    # Add a title
+     main = "MPG vs. HP",    # Add a title
      type = "p",
      col = "grey",                     # Change the color of the points
      pch = 16,                         # Change the plotting symbol  see help(points)
