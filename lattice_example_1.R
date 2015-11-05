@@ -3,7 +3,11 @@
 
 library(lattice)
 attach(mtcars)
+## Simple scatterplot
+xyplot(mpg ~ hp, data = mtcars)
 
+
+## More complex:
 # Create factors with value labels 
 gear.f<-factor(gear,levels=c(3,4,5),
                labels=c("3gears","4gears","5gears")) 
@@ -33,12 +37,12 @@ bwplot(cyl.f~mpg | gear.f,
        layout=c(1,3))
        
 # Scatterplots for each combination of two factors 
-xyplot(mpg~wt|cyl.f*gear.f, 
+xyplot(mpg ~ wt|cyl.f*gear.f, 
       main="Scatterplots by Cylinders and Gears", 
       ylab="Miles per Gallon", xlab="Car Weight")
        
 # 3d scatterplot by factor level 
-cloud(mpg~wt*qsec|cyl.f, 
+cloud(mpg ~ wt*qsec|cyl.f, 
       main="3D Scatterplot by Cylinders") 
        
 # Dotplot for each combination of two factors 

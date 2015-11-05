@@ -10,7 +10,9 @@ plot(hp, mpg)
 plot(hp, mpg, type = "l") # Looks ugly
 plot(hp, mpg, type = "p")
 # Add a title:
-plot(hp, mpg, main = "MPG vs. hp")
+plot(hp, mpg)
+title("MPG vs. hp")
+
 # Change point shape
 # Let's see available point shapes:
 # From: http://www.r-bloggers.com/some-basics-for-base-graphics/
