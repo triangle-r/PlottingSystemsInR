@@ -20,7 +20,7 @@ plot(datetime,as.numeric(as.character(used_data$Voltage)), ylab="Voltage", xlab=
 plot(datetime,as.numeric(as.character(used_data$Sub_metering_1)), xlab="", type = "l", ylab="Energy sub metering")
 lines(datetime,as.numeric(as.character(used_data$Sub_metering_2)), col = "red")
 lines(datetime,as.numeric(as.character(used_data$Sub_metering_3)), col = "blue")
-legend("topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col=c("black","red","blue"), lty=1, cex=0.7)
+legend("topright", c("SM_1","SM_2","SM_3"), col=c("black","red","blue"), lty=1, cex=0.7)
 plot(datetime,as.numeric(as.character(used_data$Global_reactive_power)), ylab="Global_reactive_power", xlab="datetime", type = "l")
 
 

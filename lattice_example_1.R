@@ -54,4 +54,23 @@ dotplot(cyl.f~mpg|gear.f,
 splom(mtcars[c(1,3,4,5,6)], 
        main="MTCARS Data")
 
+# Levelplot:
+require(geoR)
+data(elevation)
+
+elevation.df = data.frame(x = 50 * elevation$coords[,"x"],
+                          y = 50 * elevation$coords[,"y"], z = 10 * elevation$data)
+elevation.loess = loess(z ~ x*y, data = elevation.df, degree = 2, span = 0.25)
+elevation.fit = expand.grid(list(x = seq(10, 300, 1), y = seq(10, 300, 1)))
+
+z = predict(elevation.loess, newdata = elevation.fit)
+elevation.fit$Height = as.numeric(z)
+
+levelplot(Height ~ x*y, data = elevation.fit,
+          xlab = "X Coordinate (feet)", ylab = "Y Coordinate (feet)",
+          main = "Surface elevation data",
+          col.regions = terrain.colors(100)
+)
+
+
 #------------ End of lattice Example #1 ------------#

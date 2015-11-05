@@ -17,7 +17,8 @@ mtcars$cyl <- factor(mtcars$cyl)
 ggplot(data=mtcars, aes(hp, mpg)) + geom_point() + facet_grid(~ cyl)
 
 # Smoothing:
-ggplot(data=mtcars, aes(hp, mpg)) + geom_point() + facet_grid(~ cyl) + geom_smooth(colour = "blue", size = 1)
+ggplot(data=mtcars, aes(hp, mpg)) + geom_point() + facet_grid(~ cyl) + 
+  geom_smooth(colour = "blue", size = 1, method=lm)
 
 
 #======================End of ggplo2 plotting system Example 2============#
